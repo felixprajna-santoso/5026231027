@@ -69,3 +69,14 @@ Route::get('/karyawan', [karyawanDBController::class, 'index']);
 Route::get('/karyawan/tambah', [karyawanDBController::class, 'tambah']);
 Route::post('/karyawan/store', [karyawanDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
 Route::get('/karyawan/hapus/{id}', [karyawanDBController::class, 'hapus']);
+
+//route bukutulisDB
+use App\Http\Controllers\BukuTulisDBController;
+
+Route::get('/bukutulis', [BukuTulisDBController::class, 'index']);
+Route::get('/bukutulis/tambah', [BukuTulisDBController::class, 'tambah']);
+Route::post('/bukutulis/store', [BukuTulisDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
+Route::get('/bukutulis/edit/{id}',[BukuTulisDBController::class, 'edit']);
+Route::post('/bukutulis/update',[BukuTulisDBController::class, 'update']);
+Route::get('/bukutulis/hapus/{id}', [BukuTulisDBController::class, 'hapus']);
+
