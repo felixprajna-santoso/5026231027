@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Link;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\KaryawanDBController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,3 +63,9 @@ Route::post('/pegawai/update',[PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+//route karyawan
+Route::get('/karyawan', [karyawanDBController::class, 'index']);
+Route::get('/karyawan/tambah', [karyawanDBController::class, 'tambah']);
+Route::post('/karyawan/store', [karyawanDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
+Route::get('/karyawan/hapus/{id}', [karyawanDBController::class, 'hapus']);
