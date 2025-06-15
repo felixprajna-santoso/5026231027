@@ -5,6 +5,8 @@ use App\Http\Controllers\Link;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\KaryawanDBController;
+use App\Http\Controllers\PageCounterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,3 +82,5 @@ Route::get('/bukutulis/edit/{id}',[BukuTulisDBController::class, 'edit']);
 Route::post('/bukutulis/update',[BukuTulisDBController::class, 'update']);
 Route::get('/bukutulis/hapus/{id}', [BukuTulisDBController::class, 'hapus']);
 
+//router pagecounter
+Route::get('/pagecounter', [PageCounterController::class, 'pageindex']);
