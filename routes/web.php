@@ -84,3 +84,10 @@ Route::get('/bukutulis/hapus/{id}', [BukuTulisDBController::class, 'hapus']);
 
 //router pagecounter
 Route::get('/pagecounter', [PageCounterController::class, 'pageindex']);
+
+use App\Http\Controllers\NilaiController;
+
+Route::get('/eas', [NilaiController::class, 'index'])-> name('eas.index');
+Route::get('/eas/create', [NilaiController::class, 'create'])-> name('eas.create');
+Route::post('/eas', [NilaiController::class, 'store'])-> name('eas.store');
+Route::get('/eas/{id}/edit', [NilaiController::class, 'edit'])-> name('eas.edit');
